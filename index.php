@@ -36,12 +36,13 @@ $app->get('/admin/category', [AdminCategoryController::class, 'indexCategory']);
 $app->post('/admin/category', [AdminCategoryController::class, 'store']);
 $app->get('/admin/good', [AdminGoogController::class, 'indexGood']);
 $app->post('/admin/good', [AdminGoogController::class, 'store']);
+$app->get('/admin/good/{id}/edit', [AdminGoogController::class, 'edit']);
+$app->post('/admin/good/{id}/edit', [AdminGoogController::class, 'update']);
+$app->get('/good', [GoogController::class, 'index']);
 $app->get('/admin/category/{id}/edit', [AdminCategoryController::class, 'edit']);
 $app->post('/admin/category/{id}/edit', [AdminCategoryController::class, 'update']);
 $app->get('/admin/category/{id}/delete', [AdminCategoryController::class, 'delete']);
-$app->get('/good', [GoogController::class, 'index']);
 $app->get('/good/{id}', [GoogController::class, 'show']);
-
 
 $app->get('/{slug}', [CategoryController::class, 'index']);
 
