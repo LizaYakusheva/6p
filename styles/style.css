@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #3c3c3c;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 17% auto;
+}
+
+.categories-container{
+    display: flex;
+    flex-direction: column;
+    background: #f1f1f1;
+    height: 100vh;
+    padding: 10px;
+}
+.categories-container a{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.goods-container{
+    padding: 20px;
+}
+
+button{
+    padding: 5px;
+    margin: 10px;
+}
+
+.good-card{
+    width: 300px;
+    height: 400px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.goods-cont{
+    width: 1000px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(5, 1fr);
+}

@@ -1,0 +1,21 @@
+
+h1{
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #3c3c3c;
+    margin: 20px;
+}
+
+.admin-panel{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.show-cont{
+
+}
