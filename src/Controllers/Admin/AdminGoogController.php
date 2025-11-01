@@ -47,12 +47,18 @@ class AdminGoogController extends AdminController
 
     public function update(RequestInterface $request, ResponseInterface $response, array $args)
     {
-        \ORM::forTable('goods')->where('id', $args['id'])->findOne()->set([
+        ORM::forTable('goods')->where('id', $args['id'])->findOne()->set([
             'name' => $request->getParsedBody()['name'],
             'category_id' => $request->getParsedBody()['category_id'],
             'description' => $request->getParsedBody()['description'],
             'price' => $request->getParsedBody()['price'],
         ])->save();
+        return $response->withHeader('Location', '/admin/good')->withStatus(302);
+    }
+
+    public function delete(RequestInterface $request, ResponseInterface $response, array $args)
+    {
+        ORM::forTable('goods')->findOne($args['id'])->delete();
         return $response->withHeader('Location', '/admin/good')->withStatus(302);
     }
 }

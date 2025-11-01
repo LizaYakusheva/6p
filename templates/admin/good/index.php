@@ -3,7 +3,7 @@
 <h1>Добавить товар</h1>
 <form action="/admin/good" method="post">
     <input type="text" name="name" id="name" placeholder="Название">
-    <input type="text" name="description" id="description" placeholder="Описание">
+    <textarea type="text" name="description" id="description" placeholder="Описание"></textarea>
     <select name="category_id" id="category_id">
         <option value="">Выбрать категорию</option>
         <?php foreach ($categories as $category): ?>

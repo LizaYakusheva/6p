@@ -1,6 +1,10 @@
 
 <div class="goods-container">
-    <a href="/admin">Панель администратора</a>
+    <?php if(isset($_SESSION['user_id'])):?>
+    <a href="/logout">Выход</a>
+    <?php else:?>
+    <a href="/login">Вход</a>
+    <?php endif;?>
     <hr>
     <h1>Товары</h1>
     <?php

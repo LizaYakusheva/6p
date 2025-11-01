@@ -20,7 +20,7 @@ class CategoryController extends Controller
                 'categories' => \ORM::for_table('categories')
                     ->select('categories.*')
                     ->whereNull('parent_category')
-                    ->find_array(),
+                    ->findArray(),
             ]);
         } else{
             $category = ORM::forTable('categories')->where('slug', $args['slug'])->findOne();
@@ -35,13 +35,13 @@ class CategoryController extends Controller
                 'categories' => \ORM::for_table('categories')
                     ->select('categories.*')
                     ->whereNull('parent_category')
-                    ->find_array(),
+                    ->findArray(),
                 'childCategories' => \ORM::for_table('categories')
                     ->select('categories.*')
-                    ->select('p.name', 'parent_name')
-                    ->left_outer_join('categories', ['categories.parent_category', '=', 'p.id'], 'p')
+                    ->select('parent.name', 'parent_name')
+                    ->left_outer_join('categories', ['categories.parent_category', '=', 'parent.id'], 'parent')
                     ->where('parent_category', $category['id'])
-                    ->find_array(),
+                    ->findArray(),
             ]);
         }
     }

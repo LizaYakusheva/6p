@@ -6,8 +6,8 @@ use Src\Controllers\Controller;
 
 class AdminController extends Controller
 {
-    protected function setLayout(): void
+    protected function setLayout($layout = 'admin/layout.php'): void
     {
-        $this->renderer->setLayout('admin/layout.php');
+        $this->renderer->setLayout($layout);
     }
 }

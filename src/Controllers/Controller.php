@@ -13,9 +13,9 @@ class Controller
         $this->setLayout();
     }
 
-    protected function setLayout(): void
+    protected function setLayout($layout = 'layout.php'): void
     {
-        $this->renderer->setLayout('layout.php');
+        $this->renderer->setLayout($layout);
     }
 
     protected function slugify($text)
